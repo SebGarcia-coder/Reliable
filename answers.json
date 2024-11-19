@@ -1,0 +1,167 @@
+{
+    "questions": [
+      {
+        "type": "common",
+        "clues": ["Godzilla", "Caesar", "King Kong", "Gollum"],
+        "answer": "Andy Serkis",
+        "answerDetail": "Tous ces personnages ont été joués en motion capture par Andy Serkis."
+      },
+      {
+        "type": "common",
+        "clues": ["Mark David Chapman", "John Wilkes Booth", "Gavrilo Princip", "Lee Harvey Oswald"],
+        "answer": "Assassins de célébrités/chef d'état",
+        "answerDetail": "Ils ont tous assassiné une personne célèbre : John Lennon, Abraham Lincoln, l'archiduc François Ferdinand et John F. Kennedy."
+      },
+      {
+        "type": "common",
+        "clues": ["Le Roi Lion", "Bambi", "La Reine des Neiges", "Tarzan"],
+        "answer": "Un ou deux parents meurent au début du film",
+        "answerDetail": "Ces films commencent par la mort d'un ou de deux parents des personnages principaux."
+      },
+      {
+        "type": "common",
+        "clues": ["Olivier Rousteing", "Lagaf", "Steve Jobs", "Marilyn Monroe"],
+        "answer": "Adoptés à la naissance",
+        "answerDetail": "Ces personnalités ont toutes été adoptées peu après leur naissance."
+      },
+      {
+        "type": "common",
+        "clues": ["Saint Nectaire", "C'est long comme lacune", "Il faut laisser le pain chaud", "Elle a le choix dans la date"],
+        "answer": "Contrepèteries",
+        "answerDetail": "Ce sont des contrepèteries : Nain sectaire, C'est con comme la lune, Il faut lécher le pinceau, Elle a le doigt dans la chatte."
+      },
+      {
+        "type": "common",
+        "clues": ["Waterloo", "Enola Gay", "Winds of Change", "Sunday Bloody Sunday"],
+        "answer": "Titre de chansons en rapport avec l'Histoire",
+        "answerDetail": "Ces chansons font référence à des événements historiques : bataille de 1815, bombardement d'Hiroshima, chute du mur de Berlin, Bloody Sunday de 1972 en Irlande du Nord."
+      },
+      {
+        "type": "common",
+        "clues": ["Jésus/Isa", "Jonas/Yunus", "Adam/Adam", "Abraham/Ibrahim"],
+        "answer": "Acceptés par les trois religions",
+        "answerDetail": "Ces figures sont reconnues dans les trois grandes religions monothéistes : christianisme, islam et judaïsme."
+      },
+      {
+        "type": "common",
+        "clues": ["+ de 10 000€", "+ de 10L de whisky", "+ de 200 cigarettes", "Un animal de compagnie"],
+        "answer": "Choses à déclarer à la douane",
+        "answerDetail": "Ces éléments nécessitent une déclaration obligatoire lors de passages en douane."
+      },
+      {
+        "type": "common",
+        "clues": ["Marguerite Duras", "Jean-Luc Godard", "Bill Gates", "Bernard-Henri Lévy"],
+        "answer": "Entartés",
+        "answerDetail": "Ces personnalités ont toutes été victimes d'entartage lors d'apparitions publiques."
+      },
+      {
+        "type": "common",
+        "clues": ["Cake - I Will Survive", "Fugees - Killing Me Softly", "Janis Joplin - Summertime", "Hallelujah - Jeff Buckley"],
+        "answer": "Toutes des reprises",
+        "answerDetail": "Ces chansons célèbres sont en réalité des reprises d'œuvres originales d'autres artistes (Gloria Gaynor, Lori Lieberman, George Gershwin, Leonard Cohen)."
+      },
+      {
+        "type": "common",
+        "clues": ["Alexandre Dumas", "Voltaire", "Franklin D. Roosevelt", "Marcel Sembat"],
+        "answer": "Stations de métro de la ligne 9",
+        "answerDetail": "Ce sont toutes des stations situées sur la ligne 9 du métro parisien."
+      },
+      {
+        "type": "common",
+        "clues": ["Chauve-souris", "Papillon", "Poisson volant", "Mouche"],
+        "answer": "Animaux qui volent mais ne sont pas des oiseaux",
+        "answerDetail": "Ces animaux sont capables de voler ou de planer sans appartenir à la classe des oiseaux."
+      },
+      {
+        "type": "common",
+        "clues": ["Brie", "Camembert", "Munster", "Saint-Nectaire"],
+        "answer": "Fromages qui sont aussi des noms de ville",
+        "answerDetail": "Ces fromages portent le nom de villes ou villages où ils sont produits."
+      },
+      {
+        "type": "common",
+        "clues": ["Media", "Cinéma", "Disco", "Biblio"],
+        "answer": "Peuvent se terminer par -thèque",
+        "answerDetail": "Ces mots peuvent être complétés par le suffixe -thèque pour indiquer un lieu ou une collection."
+      },
+      {
+        "type": "common",
+        "clues": ["Un pas", "Une pierre", "Un reste de racine", "Un chemin qui chemine"],
+        "answer": "Les eaux de mars (Moustaki)",
+        "answerDetail": "Ce sont des éléments évoqués dans la chanson 'Les Eaux de Mars' de Georges Moustaki."
+      },
+      {
+        "type": "common",
+        "clues": ["I Gave You My Heart", "De battre mon cœur s'est arrêté", "I Just Wanna See My Baby Standing Outside the Door", "Il faudra bien te couvrir"],
+        "answer": "Chansons de Noël",
+        "answerDetail": "Ces paroles sont extraites de chansons de Noël (Last Christmas - George Michael, La fille du Père Noël - Jacques Dutronc, All I Want for Christmas - Mariah Carey, Petit Papa Noël - Tino Rossi)."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Sarkozy", "Hollande", "Macron"],
+        "answer": "Macron",
+        "answerDetail": "Ces noms représentent les présidents successifs de la France depuis 2007."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Épisode IV", "Épisode V", "Épisode VI"],
+        "answer": "Épisode I (Star Wars)",
+        "answerDetail": "Ceci suit l'ordre de sortie des films de la saga Star Wars, où les épisodes IV-VI précèdent I-III."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Lhotse", "Kangchenjunga", "K2"],
+        "answer": "Everest",
+        "answerDetail": "Ces montagnes suivent un ordre croissant de hauteur, se terminant avec l'Everest."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Mercure", "Vénus", "Terre"],
+        "answer": "Mars",
+        "answerDetail": "Les planètes sont listées de la plus proche à la plus éloignée du Soleil."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Brésil", "Allemagne", "Italie"],
+        "answer": "Argentine",
+        "answerDetail": "Ce sont des nations ayant remporté le plus de Coupes du monde de football, dans l'ordre décroissant."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Unité Nulle", "Décimale Exponentielle", "Unitaire Xyphoidien", "Tétraèdre Rotoscopique Ondulatoire Isocèle Sublime"],
+        "answer": "Quelque chose en QUATRE",
+        "answerDetail": "Les premières lettres de chaque élément forment successivement UN, DEUX, TROIS. Il fallait donc trouver un élément formant QUATRE."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Indonésie", "États-Unis", "Inde"],
+        "answer": "Chine (pays les plus peuplés)",
+        "answerDetail": "Ce sont les pays les plus peuplés, dans l'ordre croissant."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["Du sang", "Du labeur", "Des larmes"],
+        "answer": "De la sueur",
+        "answerDetail": "Cette séquence fait référence à une citation de Winston Churchill dans son premier discours de Premier ministre."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["MABEHS", "WOP", "POLB"],
+        "answer": "ZZIW",
+        "answerDetail": "Cette séquence est composée des mots inversés du refrain de Comic Strip de Serge Gainsbourg (Shebam, Pow, Blop, Wizz)."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["8128", "496", "28"],
+        "answer": "6",
+        "answerDetail": "Cette séquence est composée de nombres parfaits, dans l'ordre décroissant."
+      },
+      {
+        "type": "sequence",
+        "sequence": ["11", "7", "5"],
+        "answer": "3",
+        "answerDetail": "Cette séquence est composée de nombres premiers, dans l'ordre décroissant."
+      }
+    ]
+  }
+  
