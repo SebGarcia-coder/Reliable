@@ -12,7 +12,8 @@ export default {
         "custom-blue": "#3A606E",
         "custom-green-cluebox": "#C2D8B9",
         "custom-burgondy": "#773838",
-        "custom-burgondy-hover": "#b25858"
+        "custom-burgondy-hover": "#b25858",
+        "custom-dark-green": "#4B5842"
 
       },
       fontFamily: {
@@ -27,7 +28,8 @@ export default {
     "bg-custom-blue",
     "bg-custom-green-cluebox",
     "bg-custom-burgondy",
-    "hover:bg-custom-burgondy-hover"
+    "hover:bg-custom-burgondy-hover",
+    "bg-custom-dark-green"
 
   ],
 }
