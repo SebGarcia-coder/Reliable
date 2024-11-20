@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
-
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
-  totalTime: {
-    type: Number,
-    default: 60,
-  },
   pointsPerClue: {
     type: Array,
     default: () => [5, 3, 2, 1],
@@ -15,50 +10,42 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
-});
+})
 
-const emit = defineEmits(['nextClue']);
+const totalTime = 60
 
-const remainingTime = ref(props.totalTime);
-const currentPoints = computed(() => props.pointsPerClue[props.currentClueIndex]);
+const emit = defineEmits(['nextClue'])
 
-let timerInterval: NodeJS.Timer | null = null;
+const remainingTime = ref(totalTime)
+const currentPoints = computed(() => props.pointsPerClue[props.currentClueIndex])
 
+let timerInterval: ReturnType<typeof setInterval> | null = null
 
 const startTimer = () => {
   timerInterval = setInterval(() => {
     if (remainingTime.value > 0) {
-      remainingTime.value--;
+      remainingTime.value--
     } else {
-      clearInterval(timerInterval as NodeJS.Timeout);
+      clearInterval(timerInterval as ReturnType<typeof setInterval>)
     }
-  }, 1000);
-};
-
+  }, 1000)
+}
 
 onUnmounted(() => {
-  if (timerInterval) clearInterval(timerInterval as NodeJS.Timeout);
-});
+  if (timerInterval) clearInterval(timerInterval as ReturnType<typeof setInterval>)
+})
 
-
-onMounted(startTimer);
-
+onMounted(startTimer)
 </script>
 
 <template>
-  <div>
-    <div class="flex items-center space-x-2">
-      <div class="w-20 h-5 bg-gray-300 rounded-full relative">
-        <div
-          class="h-full bg-custom-dark-green rounded-full"
-          :style="{ width: `${((totalTime - remainingTime) / totalTime) * 100}%` }"
-
-        ></div>
-      </div>
-      <span class="absolute inset-0 flex items-center justify-center text-white ">
-        {{ currentPoints }} points
-      </span>
+  <div class="flex items-center justify-end">
+    <div class="w-20 h-5 bg-gray-300 rounded-full w-56">
+      <div
+        class="h-full bg-custom-dark-green rounded-full w-56"
+        :style="{ width: `${((totalTime - remainingTime) / totalTime) * 100}%` }"
+      ></div>
     </div>
+    <!-- <span class="text-white"> {{ currentPoints }} {{ currentPoints === 1 ? 'point' : 'points' }} </span> -->
   </div>
 </template>
-

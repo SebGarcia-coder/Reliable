@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref,  } from 'vue'
+import { ref } from 'vue'
 import ClueBox from '../components/ClueBox.vue'
 import Button from '../components/Button.vue'
 import AnswerInput from '../components/AnswerInput.vue'
@@ -12,7 +12,6 @@ const clues = ref([
   { text: 'Trèfle', visible: false },
 ])
 
-const totalTime = 60
 const pointsPerClue = [5, 3, 2, 1]
 const currentClueIndex = ref(0)
 
@@ -26,7 +25,6 @@ const revealClue = () => {
 const handleTimerEnd = () => {
   console.log('Time is up! Game over!')
 }
-
 </script>
 
 <template>
@@ -36,25 +34,23 @@ const handleTimerEnd = () => {
         >Indice suivant</Button
       >
     </div>
-    <div>
-      <div class="absolute top-8 left-8">
-        <Timer
-          :totalTime="totalTime"
-          :pointsPerClue="pointsPerClue"
-          :currentClueIndex="currentClueIndex"
-          @timerEnd="handleTimerEnd"
+    <div class="flex flex-col space-y-2">
+      <Timer
+      :pointsPerClue="pointsPerClue"
+      :currentClueIndex="currentClueIndex"
+      @timerEnd="handleTimerEnd"
+      />
+      <div class="flex">
+        <ClueBox
+          v-for="(clue, index) in clues"
+          :key="index"
+          :text="clue.text"
+          :visible="clue.visible"
+
+
         />
       </div>
-      <div class="relative flex space-x-4">
-      <ClueBox
-        v-for="(clue, index) in clues"
-        :key="index"
-        :text="clue.text"
-        :visible="clue.visible"
-      />
     </div>
-    </div>
-
     <AnswerInput placeholder="Entrez votre réponse ici" />
   </div>
 </template>
