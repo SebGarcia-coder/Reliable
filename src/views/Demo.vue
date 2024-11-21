@@ -51,6 +51,9 @@ const handleTimerEnd = () => {
         />
       </div>
     </div>
-    <AnswerInput placeholder="Entrez votre réponse ici" />
+    <AnswerInput
+    placeholder="Entrez votre réponse ici"
+    :clues="clues" />
   </div>
 </template>
+
