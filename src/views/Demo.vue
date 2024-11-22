@@ -6,10 +6,10 @@ import AnswerInput from '../components/AnswerInput.vue'
 import Timer from '../components/Timer.vue'
 
 const clues = ref([
-  { text: 'Reine', visible: true },
-  { text: 'Main', visible: false },
-  { text: 'Atout', visible: false },
-  { text: 'Trèfle', visible: false },
+  { text: '+ de 10 000 €', visible: true },
+  { text: 'Un animal de compagnie', visible: false },
+  { text: '+ de 200 cigarettes', visible: false },
+  { text: '+ de 10L de whisky', visible: false },
 ])
 
 const pointsPerClue = [5, 3, 2, 1]

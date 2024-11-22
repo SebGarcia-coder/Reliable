@@ -40,12 +40,16 @@ onMounted(startTimer)
 
 <template>
   <div class="flex items-center justify-end">
-    <div class="w-20 h-5 bg-gray-300 rounded-full w-56">
+    <div class="w-20 h-5 bg-gray-300 rounded-full w-56 relative">
       <div
-        class="h-full bg-custom-dark-green rounded-full w-56"
+        class="h-full bg-custom-dark-green rounded-full w-56 "
         :style="{ width: `${((totalTime - remainingTime) / totalTime) * 100}%` }"
-      ></div>
+      >
+        <div class="text-white absolute -top-1 right-24
+        ">
+          {{ currentPoints }} {{ currentPoints === 1 ? 'point' : 'points' }}
+        </div>
+      </div>
     </div>
-    <!-- <span class="text-white"> {{ currentPoints }} {{ currentPoints === 1 ? 'point' : 'points' }} </span> -->
   </div>
 </template>

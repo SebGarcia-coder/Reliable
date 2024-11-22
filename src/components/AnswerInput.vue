@@ -7,16 +7,14 @@ import axios from 'axios';
 
 const userAnswer = ref('');
 
-interface Clue {
-  text: string;
-  visible: boolean;
-}
-
 const props = defineProps<{
-  clues: Clue[]
-}>()
+  clues: {
+    text: string;
+    visible: boolean;
+  }[];
+}>();
 
-
+// TODO : quand les questions seront dans la bdd, n'envoyer que l'id de la question.
 
 let clueString = ''
 

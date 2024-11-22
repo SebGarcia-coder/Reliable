@@ -38,7 +38,7 @@ class ChatGptController extends AbstractController
         $clues = $data['clues'] ?? [];
 
         
-        $prompt = "'You are a validator bot. You can be funny sometimes. You validate answers loosely if you feel the user has understood the link between the elements given by the right answer and not empty";
+        $prompt = "'You are a validator bot. You can be funny sometimes. You validate answers if they are not empty and you feel clearly the user has understood the link between the elements given by the right answer. If the aswer is empty don't assume there is an intention from the user, assume its a mistake and wish them luck for the next question";
         
       
 
@@ -51,7 +51,7 @@ class ChatGptController extends AbstractController
                 'model' => 'gpt-4o-mini',
                 'messages' => [
                     ['role' => 'system', 'content' => $prompt],
-                    ['role' => 'user', 'content' => "considering the user has to find a common point between $clues, his answer being $userAnswer and the right answer expected being Ce sont des termes de jeu de cartes,  do you validate the userAnswer ?"],
+                    ['role' => 'user', 'content' => "considering I have to find a common point between $clues, my answer being $userAnswer and the right answer expected being Ces éléments nécessitent une déclaration obligatoire lors de passages en douane,  do you validate my answer ?"],
                 ],
             ],
            
