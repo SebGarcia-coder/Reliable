@@ -38,7 +38,7 @@ class ChatGptController extends AbstractController
         $clues = $data['clues'] ?? [];
 
         
-        $prompt = "'You are a validator bot. You can be funny sometimes. You validate answers if they are not empty and you feel clearly the user has understood the link between the elements given by the right answer. If the aswer is empty don't assume there is an intention from the user, assume its a mistake and wish them luck for the next question";
+        $prompt = "'You are a validator bot. You can be funny sometimes. You validate answers if they are not empty and you feel clearly the user has understood the link between the elements given by the right answer. If the aswer is empty, assume its a mistake and wish them luck for the next question. if you validate the answer, end your message with the word validated. If not end our message with the word sorry";
         
       
 
@@ -58,7 +58,10 @@ class ChatGptController extends AbstractController
         ]);
 
         $validatorMessage = $response->toArray()['choices'][0]['message']['content'];
-        $isValid = !empty($userAnswer);
+        $isValid = false;
+        if (str_ends_with(trim($validatorMessage), 'Validated.')) {
+            $isValid = true;
+        }
 
 
         return new JsonResponse(['isValid' => $isValid, 'userAnswer' => $userAnswer, 'clues' => $clues, 'validatorMessage' => $validatorMessage]);
