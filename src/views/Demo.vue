@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import ClueBox from '../components/ClueBox.vue'
 import Button from '../components/Button.vue'
 import AnswerInput from '../components/AnswerInput.vue'
@@ -12,11 +11,6 @@ const gameStore = useGameStore();
 
 const handleTimerEnd = () => {
   gameStore.revealAllClues();
-};
-
-const handleAnswerSubmission = () => {
-  gameStore.addPointsForCurrentClue();
-  console.log(`Score: ${gameStore.score}`);
 };
 </script>
 
@@ -34,8 +28,7 @@ const handleAnswerSubmission = () => {
         >Indice suivant</Button
       >
     </div>
-    <div class="flex flex-col space-y-2 items-center max-w-[60%]">
-      <div>{{ gameStore.score }}</div>
+    <div class="flex flex-col space-y-2  max-w-[60%]">
       <Timer
       v-if="gameStore.remainingTime > 0"
       @timerEnd="handleTimerEnd"

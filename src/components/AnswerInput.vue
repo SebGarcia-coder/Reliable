@@ -9,12 +9,6 @@ const gameStore = useGameStore();
 
 const userAnswer = ref('');
 
-// const props = defineProps<{
-//   clues: {
-//     text: string;
-//     visible: boolean;
-//   }[];
-// }>();
 
 // TODO : quand les questions seront dans la bdd, n'envoyer que l'id de la question.
 
@@ -38,7 +32,9 @@ const submitAnswer = async () => {
     gameStore.answerValidation.isValid = isValid;
     gameStore.answerValidation.message = validatorMessage;
 
+    gameStore.revealAllClues()
     if(isValid) {
+
       gameStore.addPointsForCurrentClue();
     }
 
