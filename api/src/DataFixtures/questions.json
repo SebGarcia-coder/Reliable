@@ -1,0 +1,395 @@
+{
+    "questions": [
+        {
+            "type": "common",
+            "clues": [
+                "Godzilla",
+                "Caesar",
+                "King Kong",
+                "Gollum"
+            ],
+            "answer": "Tous ces personnages ont été joués en motion capture par Andy Serkis."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Mark David Chapman",
+                "John Wilkes Booth",
+                "Gavrilo Princip",
+                "Lee Harvey Oswald"
+            ],
+            "answer": "Ils ont tous assassiné une personne célèbre : John Lennon, Abraham Lincoln, l'archiduc François Ferdinand et John F. Kennedy."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Le Roi Lion",
+                "Bambi",
+                "La Reine des Neiges",
+                "Tarzan"
+            ],
+            "answer": "Ces films commencent par la mort d'un ou de deux parents des personnages principaux."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Olivier Rousteing",
+                "Lagaf",
+                "Steve Jobs",
+                "Marilyn Monroe"
+            ],
+            "answer": "Ces personnalités ont toutes été adoptées peu après leur naissance."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Saint Nectaire",
+                "C'est long comme lacune",
+                "Il faut laisser le pain chaud",
+                "Elle a le choix dans la date"
+            ],
+            "answer": "Ce sont des contrepèteries : Nain sectaire, C'est con comme la lune, Il faut lécher le pinceau, Elle a le doigt dans la chatte."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Waterloo",
+                "Enola Gay",
+                "Winds of Change",
+                "Sunday Bloody Sunday"
+            ],
+            "answer": "Ces chansons font référence à des événements historiques : bataille de 1815, bombardement d'Hiroshima, chute du mur de Berlin, Bloody Sunday de 1972 en Irlande du Nord."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Jésus/Isa",
+                "Jonas/Yunus",
+                "Adam/Adam",
+                "Abraham/Ibrahim"
+            ],
+            "answer": "Ces figures sont reconnues dans les trois grandes religions monothéistes : christianisme, islam et judaïsme."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "+ de 10 000€",
+                "+ de 10L de whisky",
+                "+ de 200 cigarettes",
+                "Un animal de compagnie"
+            ],
+            "answer": "Ces éléments nécessitent une déclaration obligatoire lors de passages en douane."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Marguerite Duras",
+                "Jean-Luc Godard",
+                "Bill Gates",
+                "Bernard-Henri Lévy"
+            ],
+            "answer": "Ces personnalités ont toutes été victimes d'entartage lors d'apparitions publiques."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Cake - I Will Survive",
+                "Fugees - Killing Me Softly",
+                "Janis Joplin - Summertime",
+                "Hallelujah - Jeff Buckley"
+            ],
+            "answer": "Ces chansons célèbres sont en réalité des reprises d'œuvres originales d'autres artistes (Gloria Gaynor, Lori Lieberman, George Gershwin, Leonard Cohen)."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Alexandre Dumas",
+                "Voltaire",
+                "Franklin D. Roosevelt",
+                "Marcel Sembat"
+            ],
+            "answer": "Ce sont toutes des stations situées sur la ligne 9 du métro parisien."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Chauve-souris",
+                "Papillon",
+                "Poisson volant",
+                "Mouche"
+            ],
+            "answer": "Ces animaux sont capables de voler ou de planer sans appartenir à la classe des oiseaux."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Brie",
+                "Camembert",
+                "Munster",
+                "Saint-Nectaire"
+            ],
+            "answer": "Ces fromages portent le nom de villes ou villages où ils sont produits."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Media",
+                "Cinéma",
+                "Disco",
+                "Biblio"
+            ],
+            "answer": "Ces mots peuvent être complétés par le suffixe -thèque pour indiquer un lieu ou une collection."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Un pas",
+                "Une pierre",
+                "Un reste de racine",
+                "Un chemin qui chemine"
+            ],
+            "answer": "Ce sont des éléments évoqués dans la chanson 'Les Eaux de Mars' de Georges Moustaki."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "I Gave You My Heart",
+                "De battre mon cœur s'est arrêté",
+                "I Just Wanna See My Baby Standing Outside the Door",
+                "Il faudra bien te couvrir"
+            ],
+            "answer": "Ces paroles sont extraites de chansons de Noël (Last Christmas - George Michael, La fille du Père Noël - Jacques Dutronc, All I Want for Christmas - Mariah Carey, Petit Papa Noël - Tino Rossi)."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Sarkozy",
+                "Hollande",
+                "Macron",
+                "Macron"
+            ],
+            "answer": "Ces noms représentent les présidents successifs de la France depuis 2007."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Épisode IV",
+                "Épisode V",
+                "Épisode VI",
+                "Épisode I (Star Wars)"
+            ],
+            "answer": "Ceci suit l'ordre de sortie des films de la saga Star Wars, où les épisodes IV-VI précèdent I-III."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Lhotse",
+                "Kangchenjunga",
+                "K2",
+                "Everest"
+            ],
+            "answer": "Ces montagnes suivent un ordre croissant de hauteur, se terminant avec l'Everest."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Mercure",
+                "Vénus",
+                "Terre",
+                "Mars"
+            ],
+            "answer": "Les planètes sont listées de la plus proche à la plus éloignée du Soleil."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Brésil",
+                "Allemagne",
+                "Italie",
+                "Argentine"
+            ],
+            "answer": "Ce sont des nations ayant remporté le plus de Coupes du monde de football, dans l'ordre décroissant."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Unité Nulle",
+                "Décimale Exponentielle",
+                "Unitaire Xyphoidien",
+                "Tétraèdre Rotoscopique Ondulatoire Isocèle Sublime",
+                "Quelque chose en QUATRE"
+            ],
+            "answer": "Les premières lettres de chaque élément forment successivement UN, DEUX, TROIS. Il fallait donc trouver un élément formant QUATRE."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Indonésie",
+                "États-Unis",
+                "Inde",
+                "Chine (pays les plus peuplés)"
+            ],
+            "answer": "Ce sont les pays les plus peuplés, dans l'ordre croissant."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Du sang",
+                "Du labeur",
+                "Des larmes",
+                "De la sueur"
+            ],
+            "answer": "Cette séquence fait référence à une citation de Winston Churchill dans son premier discours de Premier ministre."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "MABEHS",
+                "WOP",
+                "POLB",
+                "ZZIW"
+            ],
+            "answer": "Cette séquence est composée des mots inversés du refrain de Comic Strip de Serge Gainsbourg (Shebam, Pow, Blop, Wizz)."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "8128",
+                "496",
+                "28",
+                "6"
+            ],
+            "answer": "Cette séquence est composée de nombres parfaits, dans l'ordre décroissant."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "11",
+                "7",
+                "5",
+                "3"
+            ],
+            "answer": "Cette séquence est composée de nombres premiers, dans l'ordre décroissant."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Nirvana - Come as You Are",
+                "Janis Joplin - Summertime",
+                "The Doors - The End",
+                "Amy Winehouse - Back to Black"
+            ],
+            "answer": "Tous ces artistes sont morts à 27 ans."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Whitney Houston",
+                "Tina Turner",
+                "Rihanna",
+                "Mariah Carey"
+            ],
+            "answer": "Toutes ont été victimes de violences."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Paloma",
+                "I've Seen It All",
+                "Lose Yourself",
+                "Llorando"
+            ],
+            "answer": "Toutes ces chansons sont interprétées réellement dans des films, respectivement dans Tout sur ma mère d'Almodovar, Dancer in the Dark de Lars Von Trier, 8 miles de Curtis Hanson et Mulholland Drive de David Lynch."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Un jour sans fin",
+                "Edge of Tomorrow",
+                "Vertigo",
+                "Bodies"
+            ],
+            "answer": "Ce sont des films ou des séries qui se basent  sur la répétition."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Lucie",
+                "Céline",
+                "Michelle",
+                "Marie"
+            ],
+            "answer": "Ce sont des prénoms féminins qui sont aussi des titres de chansons célèbres, interprétées respectivement par Pascal Obispo, Hugues Aufray, The Beatles et Johnny Hallyday."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Mémento",
+                "Irréversible",
+                "La flèche du temps",
+                "Pulp Fiction"
+            ],
+            "answer": "Ces films ou ces livres sont racontés à l'envers ou dans le désordre. Ils sont respectivement l'oeuvre de Christopher Nolan, Gaspar Noé, Martin Amis et Quentin Tarantino."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Citizen Kane",
+                "Prête à tout",
+                "Zelig",
+                "Sugar Man"
+            ],
+            "answer": "Ces films sont racontés à travers multiples points de vue. Ils sont respectivement l'oeuvre de Orson Welles, Gus Van Sant, Woody Allen et Malik Bendjelloul."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Le Patient anglais",
+                "Titanic",
+                "Forrest Gump",
+                "La Ligne verte"
+            ],
+            "answer": "Ces films sont racontés en flashback par un vieux personnage. Ils sont respectivement l'oeuvre de Anthony Minghella, James Cameron, Robert Zemeckis et Frank Darabont."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Olympie",
+                "Rhodes",
+                "Alexandrie",
+                "Babylone"
+            ],
+            "answer": "Ce sont des merveilles du monde."
+        },
+        {
+            "type": "sequence",
+            "clues": [
+                "Franc Germinal",
+                "Franc Poincaré",
+                "Franc",
+                "Euro"
+            ],
+            "answer": "Ce sont des monnaies utilisées en france, la dernière étant la monnaie actuelle."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Lourde",
+                "Cologne",
+                "Seltz",
+                "Minérale"
+            ],
+            "answer": "Ce sont des types d'eau."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Louis CK",
+                "Gérard Depardieu",
+                "Kevin Spacey",
+                "Harvey Weinstein"
+            ],
+            "answer": "Tous ont été impliqués dans le mouvement #MeToo."
+        }
+    ]
+}

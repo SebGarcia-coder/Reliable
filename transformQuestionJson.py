@@ -1,4 +1,7 @@
-{
+import json
+
+# Input JSON
+data = {
     "questions": [
       {
         "type": "common",
@@ -164,4 +167,27 @@
       }
     ]
   }
-  
+
+transformed_data = {"questions": []}
+
+for question in data["questions"]:
+    if question["type"] == "common":
+        transformed_question = {
+            "type": question["type"],
+            "clues": question["clues"],
+            "answer": question["answerDetail"]
+        }
+    elif question["type"] == "sequence":
+        transformed_question = {
+            "type": question["type"],
+            "clues": question["sequence"] + [question["answer"]],
+            "answer": question["answerDetail"]
+        }
+    transformed_data["questions"].append(transformed_question)
+
+transformed_data
+
+with open("transformed_questions.json", "w", encoding="utf-8") as f:
+    json.dump(transformed_data, f, ensure_ascii=False, indent=4)
+
+print("Le fichier 'transformed_questions.json' a été créé avec succès.")
