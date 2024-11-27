@@ -40,4 +40,24 @@ class QuestionRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function findOne(int $id): ?Question
+    {
+        return $this->createQueryBuilder('q')
+            ->andWhere('q.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    public function findOneRandomQuestionByType(string $type): ?Question
+    {
+        return $this->createQueryBuilder('q')
+            ->andWhere('q.type = :type')
+            ->setParameter('type', $type)
+            ->orderBy('RAND()')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }

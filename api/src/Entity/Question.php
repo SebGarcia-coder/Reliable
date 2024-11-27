@@ -23,7 +23,7 @@ class Question
     #[ORM\Column(length: 255)]
     private ?string $answer = null;
 
-//TODO creer une table category et faire une relation ManyToMany
+    //TODO creer une table category et faire une relation ManyToMany
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
     private ?array $categories = null;
 
@@ -48,6 +48,7 @@ class Question
     {
         return $this->clues;
     }
+
 
     public function setClues(?array $clues): static
     {

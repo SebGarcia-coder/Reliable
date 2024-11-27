@@ -123,7 +123,7 @@
         {
             "type": "common",
             "clues": [
-                "Brie",
+                "Rocamadour",
                 "Camembert",
                 "Munster",
                 "Saint-Nectaire"
@@ -359,7 +359,7 @@
                 "Alexandrie",
                 "Babylone"
             ],
-            "answer": "Ce sont des merveilles du monde."
+            "answer": "Ce sont des lieux accueillant une merveille du monde."
         },
         {
             "type": "sequence",
@@ -409,25 +409,25 @@
                 "Émile Ajar",
                 "Willy"
             ],
-            "answer": "Ces noms sont des pseudonymes utilisés par des écrivains célèbres pour publier leurs œuvres (J.K.Rowling, Stephen King, Romain Gary, Colette."
+            "answer": "Ces noms sont des pseudonymes utilisés par des écrivains célèbres pour publier leurs œuvres, respectivement J.K. Rowling, Stephen King, Romain Gary et Colette."
         },
         {
             "type": "sequence",
             "sequence": [
                 "Léopold II",
-                "Adolf Hitler",
-                "Joseph Staline",
+                "Hitler",
+                "Staline",
                 "Mao Zedong"
             ],
-            "answer": "Ce sont les  dictateurs les plus meurtriers de l'histoire, classés par ordre croissant du nombre de victimes."
+            "answer": "Ce sont les plus grands dictateurs meurtriers de l'histoire, classés par ordre croissant du nombre de victimes."
         },
         {
             "type": "common",
             "clues": [
-                "Vladimir Nabokov",
-                "Samuel Beckett",
-                "Milan Kundera",
-                "Joseph Conrad"
+                "Nabokov",
+                "Beckett",
+                "Kundera",
+                "Conrad"
             ],
             "answer": "Ces auteurs ont écrit dans une langue différente de leur langue maternelle."
         },
@@ -444,10 +444,10 @@
         {
             "type": "common",
             "clues": [
-                "Le château",
-                "Les Âmes mortes",
-                "Edwin Drood",
-                "Bouvard et Pécuchet"
+                "Le Bateau - Kafka",
+                "Les Âmes mortes - Gogol",
+                "Edwin Drood - Dickens",
+                "Bouvard et Pécuchet - Flaubert"
             ],
             "answer": "Ces œuvres littéraires n'ont jamais été achevées par leurs auteurs."
         },
@@ -456,10 +456,10 @@
             "clues": [
                 "Maradona",
                 "Thierry Henry",
-                "Vata Matanu Garcia",
-                "Luis Suarez"
+                "Vata",
+                "Suarez"
             ],
-            "answer": "Ces joueurs de football sont connus pour des actions controversées impliquant l'utilisation de la main."
+            "answer": "Ces joueurs sont connus pour des actions controversées impliquant l'utilisation de la main."
         },
         {
             "type": "sequence",
@@ -479,7 +479,7 @@
                 "Full Metal Jacket",
                 "Barry Lyndon"
             ],
-            "answer": "Ces films sont réalisés par Stanley Kubrick, classés dans l'ordre antéchronologique."
+            "answer": "Ces films sont réalisés par Stanley Kubrick, classés dans l'ordre chronologique."
         },
         {
             "type": "sequence",
@@ -494,7 +494,7 @@
         {
             "type": "sequence",
             "sequence": [
-                "1871",
+                "1870",
                 "1848",
                 "1830",
                 "1789"
@@ -529,7 +529,7 @@
                 "Oslo",
                 "Reykjavik"
             ],
-            "answer": "Ce sont les capitales les plus septentrionales, classées par latitude croissante."
+            "answer": "Ce sont les capitales les plus septentrionales, classées par latitude."
         },
         {
             "type": "sequence",
@@ -587,9 +587,9 @@
                 "École",
                 "Chambre",
                 "Prisonnier",
-                "Coupe ou Feu"
+                "Coupe"
             ],
-            "answer": "Ces mots se retrouvent dans les titres des volumes 1 à 4 de la sage Harry Potter."
+            "answer": "Ces indices sont liés à l'univers de Harry Potter."
         },
         {
             "type": "common",
@@ -612,6 +612,16 @@
             "answer": "Ce sont les alertes météo, classées par ordre d'intensité croissante."
         },
         {
+            "type": "sequence",
+            "sequence": [
+                "A, B",
+                "Left, Right",
+                "Down, Down",
+                "Up"
+            ],
+            "answer": "Ce sont les étapes du célèbre code de triche de Nintendo."
+        },
+        {
             "type": "common",
             "clues": [
                 "P/D",
@@ -629,7 +639,7 @@
                 "TECRA",
                 "PULE"
             ],
-            "answer": "Collés les uns aux autres, ces éléments forment le palindrome 'Elu par cette crapule'."
+            "answer": "Ce sont des palindromes, classés dans l'ordre inverse."
         },
         {
             "type": "sequence",
@@ -659,7 +669,7 @@
                 "1.73205",
                 "3.14159"
             ],
-            "answer": "Ces nombres sont célèbres : le nombre d'or, la racine carrée de 2, la racine carrée de 3, et Pi."
+            "answer": "Ces nombres sont célèbres : la proportion dorée, la racine carrée de 2, la racine carrée de 3, et Pi."
         },
         {
             "type": "sequence",
@@ -690,6 +700,26 @@
                 "Les Diaboliques"
             ],
             "answer": "Dans ces films, les méchants gagnent à la fin."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Stevie Wonder",
+                "Ray Charles",
+                "Andrea Bocelli",
+                "Gilbert Montagné"
+            ],
+            "answer": "Ces chanteurs sont tous aveugles."
+        },
+        {
+            "type": "common",
+            "clues": [
+                "Chantal Goya",
+                "Jean Monnet",
+                "Kevin Bacon",
+                "Raphaël"
+            ],
+            "answer": "Ces personnes portent des noms qui sont également ceux de peintres célèbres."
         }
     ]
 }
