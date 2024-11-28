@@ -27,7 +27,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex justify-between p-5">
+  <div class="flex justify-between p-5 -mb-20 md:-mb-24">
     <div class="">
       <ScoreBox>Score : {{ gameStore.score }}</ScoreBox>
     </div>
@@ -43,11 +43,13 @@ onMounted(() => {
       >
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center min-h-screen space-y-6">
-    <div class="flex flex-col space-y-6 max-w-[60%]">
-      <Timer v-if="gameStore.answerSubmitted === false" @timerEnd="handleTimerEnd" />
+  <div class="flex flex-col items-center justify-center min-h-screen space-y-6 overflow-hidden">
+    <div class="flex flex-col space-y-2 max-w-[80%] md:max-w-3xl md: ">
+      <div class="flex items-center justify-end">
+        <Timer v-if="gameStore.answerSubmitted === false" @timerEnd="handleTimerEnd" />
+      </div>
       <!-- TODO : mettre un display grid pour les cluebox -->
-      <div class="flex">
+      <div class="flex justify-between gap-6 flex-wrap transition-opacity duration-500 ease-in-out">
         <ClueBox
           v-for="(clue, index) in gameStore.clues"
           :key="index"
@@ -64,8 +66,6 @@ onMounted(() => {
           @click="gameStore.getRandomQuestion('common')"
           >Question suivante</Button
         >
-      </div>
-      <div>
       </div>
     </div>
     <AnswerInput

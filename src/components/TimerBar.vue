@@ -4,7 +4,7 @@ import { useGameStore } from '@/stores/game'
 
 const gameStore = useGameStore()
 
-const totalTime = 30
+const totalTime = 180
 
 const emit = defineEmits(['timerEnd'])
 
@@ -30,16 +30,16 @@ onMounted(startTimer)
 </script>
 
 <template>
-  <div class="flex items-center justify-end">
-    <div class="w-20 h-5 bg-gray-300 rounded-full w-56 relative">
+
+    <div class=" h-5 bg-gray-300 rounded-full w-32 relative">
       <div
-        class="h-full bg-custom-dark-green rounded-full w-56"
+        class="h-full bg-custom-dark-green rounded-full w-32"
         :style="{ width: `${((totalTime - gameStore.remainingTime) / totalTime) * 100}%` }"
       >
-        <div class="text-white absolute -top-0.5 right-24">
+        <div class="text-white absolute -top-0.5 right-10">
           {{ gameStore.currentPoints }} {{ gameStore.currentPoints === 1 ? 'point' : 'points' }}
         </div>
       </div>
     </div>
-  </div>
+
 </template>

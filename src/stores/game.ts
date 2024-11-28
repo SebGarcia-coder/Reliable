@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import axios from 'axios'
 
 export const useGameStore = defineStore('game', () => {
-  const remainingTime = ref(60)
+  const remainingTime = ref(180)
   const clues = ref<{ text: string; visible: boolean }[]>([])
   const pointsPerClue = ref([5, 3, 2, 1])
   const currentClueIndex = ref(0)
@@ -23,7 +23,7 @@ export const useGameStore = defineStore('game', () => {
   }
 
   const resetGame = () => {
-    remainingTime.value = 90
+    remainingTime.value = 180
     score.value = 0
     currentClueIndex.value = 0
     clues.value.forEach((clue, index) => {
@@ -50,7 +50,7 @@ export const useGameStore = defineStore('game', () => {
   }
 
   const getRandomQuestion = async (type: string) => {
-    remainingTime.value = 30
+    remainingTime.value = 180
     clues.value = []
     currentClueIndex.value = 0
     currentQuestionId.value = null

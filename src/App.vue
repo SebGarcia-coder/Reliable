@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-custom-blue min-h-screen">
+  <div class="bg-custom-blue min-h-screen ">
     <RouterView />
   </div>
 </template>
