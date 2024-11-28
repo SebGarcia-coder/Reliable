@@ -31,12 +31,12 @@ onMounted(startTimer)
 
 <template>
 
-    <div class=" h-5 bg-gray-300 rounded-full w-32 relative">
+    <div class=" h-5 bg-gray-300 rounded-full w-40 relative">
       <div
-        class="h-full bg-custom-dark-green rounded-full w-32"
+        class="h-full bg-custom-dark-green rounded-full w-40"
         :style="{ width: `${((totalTime - gameStore.remainingTime) / totalTime) * 100}%` }"
       >
-        <div class="text-white absolute -top-0.5 right-10">
+        <div class="text-white absolute -top-0.5 right-14">
           {{ gameStore.currentPoints }} {{ gameStore.currentPoints === 1 ? 'point' : 'points' }}
         </div>
       </div>

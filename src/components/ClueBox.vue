@@ -14,7 +14,7 @@ defineProps({
   <div>
     <div
       v-if="visible"
-      class=" flex items-center justify-center w-32 h-32 bg-custom-green-cluebox rounded-lg shadow-lg text-center text-white text-2xl p-2"
+      class=" flex items-center justify-center w-40 h-40 bg-custom-green-cluebox rounded-lg shadow-lg text-center text-white text-2xl p-2"
     >
       {{ text }}
     </div>

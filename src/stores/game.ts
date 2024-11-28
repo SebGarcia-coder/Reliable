@@ -16,6 +16,8 @@ export const useGameStore = defineStore('game', () => {
     message: '',
   })
 
+  const currentQuestionCommon = ref(0)
+
   const currentPoints = computed(() => pointsPerClue.value[currentClueIndex.value])
 
   const addPointsForCurrentClue = () => {
@@ -57,6 +59,7 @@ export const useGameStore = defineStore('game', () => {
     userAnswer.value = ''
     answerValidation.value = { isValid: false, message: '' }
     answerSubmitted.value = false
+    currentQuestionCommon.value ++
     try {
       const response = await axios.get('http://127.0.0.1:8000/api/questions/random', {
         params: {
@@ -129,6 +132,7 @@ export const useGameStore = defineStore('game', () => {
     currentQuestionId,
     answerSubmitted,
     userAnswer,
+    currentQuestionCommon,
     revealNextClue,
     addPointsForCurrentClue,
     resetGame,
