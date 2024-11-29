@@ -23,6 +23,7 @@ const updateValue = (event: Event) => {
       :placeholder="placeholder"
       class="w-full h-full bg-transparent border-none outline-none text-black"
       type="text"
+      maxlength="100"
     />
   </div>
 </template>

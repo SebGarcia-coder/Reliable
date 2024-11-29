@@ -42,12 +42,12 @@ const handleButtonClick = () => {
   if (gameStore.currentQuestionCommon === 3) {
     router.push('/rules-3');
   } else {
-    gameStore.getRandomQuestion(questionType.value);
+    gameStore.getRandomQuestion(questionType.value, gameStore.usedQuestionIds);
   }
 };
 
 onMounted(() => {
-  gameStore.getRandomQuestion(questionType.value)
+  gameStore.getRandomQuestion(questionType.value, gameStore.usedQuestionIds)
 })
 </script>
 

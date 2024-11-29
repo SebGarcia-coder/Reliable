@@ -24,7 +24,8 @@ class QuestionController extends AbstractController
     {
         
         $type = $request->query->get('type');
-        $question = $repository->findOneRandomQuestionByType($type);
+        $usedQuestionIds = $request->query->all('usedQuestionIds') ?? [];
+        $question = $repository->findOneRandomQuestionByType($type, $usedQuestionIds);
 
         if (!$question) {
             return new JsonResponse(['error' => 'No questions available'], 404);

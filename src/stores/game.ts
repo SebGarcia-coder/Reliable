@@ -16,7 +16,7 @@ export const useGameStore = defineStore('game', () => {
     message: '',
     correctAnswer: '',
   })
-  // const usedIds = ref<number[]>([])
+  const usedQuestionIds = ref<number[]>([])
 
   const currentQuestionCommon = ref(0)
 
@@ -51,7 +51,7 @@ export const useGameStore = defineStore('game', () => {
     }
   }
 
-  const getRandomQuestion = async (type: string) => {
+  const getRandomQuestion = async (type: string, ids: number[] | null) => {
     remainingTime.value = 180
     clues.value = []
     currentClueIndex.value = 0
@@ -64,12 +64,13 @@ export const useGameStore = defineStore('game', () => {
       const response = await axios.get('http://127.0.0.1:8000/api/questions/random', {
         params: {
           type: type,
+          usedQuestionIds: ids,
         },
       })
       const { questionId, firstClue } = response.data as { questionId: number; firstClue: string }
 
       currentQuestionId.value = questionId
-
+      usedQuestionIds.value.push(questionId)
       clues.value.push({ text: firstClue })
     } catch (error) {
       console.error('Error fetching question:', error)
@@ -134,6 +135,7 @@ export const useGameStore = defineStore('game', () => {
     answerSubmitted,
     userAnswer,
     currentQuestionCommon,
+    usedQuestionIds,
     revealNextClue,
     addPointsForCurrentClue,
     resetGame,
