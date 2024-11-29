@@ -72,6 +72,6 @@ class ChatGptController extends AbstractController
         }
 
 
-        return new JsonResponse(['isValid' => $isValid, 'validatorMessage' => $validatorMessage]);
+        return new JsonResponse(['isValid' => $isValid, 'validatorMessage' => $validatorMessage, 'correctAnswer' => $correctAnswer]);
     }
 }

@@ -8,8 +8,10 @@ import ResultBox from '../components/ResultBox.vue'
 import ScoreBox from '@/components/ScoreBox.vue'
 import { computed, onMounted } from 'vue'
 import { QuestionType } from '@/enums/game'
+import { useRouter } from 'vue-router';
 
 const gameStore = useGameStore()
+const router = useRouter();
 
 const TIME_IS_UP = "Temps écoulé"
 
@@ -36,13 +38,21 @@ const handleTimerEnd = () => {
   gameStore.submitAnswer()
 }
 
+const handleButtonClick = () => {
+  if (gameStore.currentQuestionCommon === 3) {
+    router.push('/rules-3');
+  } else {
+    gameStore.getRandomQuestion(questionType.value);
+  }
+};
+
 onMounted(() => {
-  gameStore.getRandomQuestion(QuestionType.COMMON)
+  gameStore.getRandomQuestion(questionType.value)
 })
 </script>
 
 <template>
-  <div class="flex justify-between p-5 -mb-20 md:-mb-24">
+  <div class="flex justify-between p-5 -mb-24 md:-mb-24">
     <div class="">
       <ScoreBox>Score : {{ gameStore.score }}</ScoreBox>
     </div>
@@ -70,16 +80,15 @@ onMounted(() => {
           v-for="(clue, index) in gameStore.clues"
           :key="index"
           :text="clue.text"
-          :visible="clue.visible"
         />
       </div>
       <div class="space-y-6 items-center flex flex-col">
-        <ResultBox v-if="gameStore.remainingTime === 0 || gameStore.answerSubmitted === true" />
+        <ResultBox v-if="gameStore.remainingTime === 0 || gameStore.answerSubmitted === true" class="mt-4" />
         <Button
           v-if="gameStore.remainingTime === 0 || gameStore.answerSubmitted === true"
           color="bg-custom-green"
           hover="bg-custom-green-hover"
-          @click="gameStore.getRandomQuestion(questionType)"
+          @click="handleButtonClick"
           >Question suivante</Button
         >
       </div>

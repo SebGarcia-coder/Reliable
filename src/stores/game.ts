@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const useGameStore = defineStore('game', () => {
   const remainingTime = ref(180)
-  const clues = ref<{ text: string; visible: boolean }[]>([])
+  const clues = ref<{ text: string }[]>([])
   const pointsPerClue = ref([5, 3, 2, 1])
   const currentClueIndex = ref(0)
   const score = ref(0)
@@ -14,7 +14,9 @@ export const useGameStore = defineStore('game', () => {
   const answerValidation = ref({
     isValid: null as boolean | null,
     message: '',
+    correctAnswer: '',
   })
+  // const usedIds = ref<number[]>([])
 
   const currentQuestionCommon = ref(0)
 
@@ -28,9 +30,7 @@ export const useGameStore = defineStore('game', () => {
     remainingTime.value = 180
     score.value = 0
     currentClueIndex.value = 0
-    clues.value.forEach((clue, index) => {
-      clue.visible = index === 0
-    })
+
   }
 
   const revealAllClues = async (id: number | null) => {
@@ -57,7 +57,7 @@ export const useGameStore = defineStore('game', () => {
     currentClueIndex.value = 0
     currentQuestionId.value = null
     userAnswer.value = ''
-    answerValidation.value = { isValid: false, message: '' }
+    answerValidation.value = { isValid: false, message: '', correctAnswer: '' }
     answerSubmitted.value = false
     currentQuestionCommon.value ++
     try {
@@ -70,7 +70,7 @@ export const useGameStore = defineStore('game', () => {
 
       currentQuestionId.value = questionId
 
-      clues.value.push({ text: firstClue, visible: true })
+      clues.value.push({ text: firstClue })
     } catch (error) {
       console.error('Error fetching question:', error)
       alert('There was an error. Please try again.')
@@ -85,12 +85,11 @@ export const useGameStore = defineStore('game', () => {
       )
 
       const { clue } = response.data as { clue: string }
-      clues.value.push({ text: clue, visible: true })
+      clues.value.push({ text: clue })
     } catch (error) {
       console.error('Error fetching question:', error)
       alert('There was an error. Please try again.')
     }
-    clues.value[currentClueIndex.value + 1].visible = true
     currentClueIndex.value++
   }
 
@@ -102,13 +101,15 @@ export const useGameStore = defineStore('game', () => {
         questionId: currentQuestionId.value,
         currentPoints: currentPoints.value,
       })
-      const { isValid, validatorMessage } = response.data as {
+      const { isValid, validatorMessage, correctAnswer } = response.data as {
         isValid: boolean
         validatorMessage: string
+        correctAnswer: string
       }
 
       answerValidation.value.isValid = isValid
       answerValidation.value.message = validatorMessage
+      answerValidation.value.correctAnswer = correctAnswer
 
       revealAllClues(currentQuestionId.value)
       if (isValid) {

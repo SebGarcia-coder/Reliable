@@ -22,8 +22,8 @@ class QuestionController extends AbstractController
     #[Route('/api/questions/random', name: 'random_question', methods: ['GET'])]
     public function getRandomQuestion(Request $request, QuestionRepository $repository): JsonResponse
     {
+        
         $type = $request->query->get('type');
-        // dd($type);
         $question = $repository->findOneRandomQuestionByType($type);
 
         if (!$question) {
