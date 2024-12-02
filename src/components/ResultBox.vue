@@ -10,7 +10,6 @@ const timeOut = computed(() => (gameStore.remainingTime === 0 ? 'Temps écoulé 
   <div class="rounded-lg bg-custom-green flex items-center px-4">
     <div v-if="gameStore.answerValidation.message">
       {{ gameStore.answerValidation.message }} <br />
-      La bonne réponse était : {{ gameStore.answerValidation.correctAnswer }}
     </div>
     <span v-else-if="timeOut && gameStore.answerSubmitted === false">{{ timeOut }}</span>
     <div v-else>le grand validateur réfléchit...</div>

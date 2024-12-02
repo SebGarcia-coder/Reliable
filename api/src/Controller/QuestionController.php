@@ -70,7 +70,6 @@ class QuestionController extends AbstractController
 
         return new JsonResponse([
             'allClues' => $clues,
-            'test' => 'test'
         ]);
     }
 

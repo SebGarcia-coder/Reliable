@@ -16,7 +16,7 @@ const router = useRouter();
 const TIME_IS_UP = "Temps écoulé"
 
 const questionType = computed(() => {
-  if (gameStore.currentQuestionCommon < 3 ) {
+  if (gameStore.currentQuestionNumber < 3 ) {
     return QuestionType.COMMON
   } else {
     return QuestionType.SEQUENCE
@@ -39,8 +39,10 @@ const handleTimerEnd = () => {
 }
 
 const handleButtonClick = () => {
-  if (gameStore.currentQuestionCommon === 3) {
+  if (gameStore.currentQuestionNumber === 3) {
     router.push('/rules-3');
+  } else if (gameStore.currentQuestionNumber === 6) {
+    router.push('/summary');
   } else {
     gameStore.getRandomQuestion(questionType.value, gameStore.usedQuestionIds);
   }
@@ -56,7 +58,7 @@ onMounted(() => {
     <div class="">
       <ScoreBox>Score : {{ gameStore.score }}</ScoreBox>
     </div>
-    Question {{ gameStore.currentQuestionCommon }}/3
+    Question {{ gameStore.currentQuestionNumber }}/3
     <div>
       <Button
         v-if="showClueButton"
@@ -75,7 +77,7 @@ onMounted(() => {
         <Timer v-if="gameStore.answerSubmitted === false" @timerEnd="handleTimerEnd" />
       </div>
       <!-- TODO : mettre un display grid pour les cluebox -->
-      <div class="flex justify-between gap-6 flex-wrap transition-opacity duration-500 ease-in-out">
+      <div class="flex justify-between gap-6 flex-wrap h-40 items-center transition-opacity duration-500 ease-in-out">
         <ClueBox
           v-for="(clue, index) in gameStore.clues"
           :key="index"
@@ -83,19 +85,20 @@ onMounted(() => {
         />
       </div>
       <div class="space-y-6 items-center flex flex-col">
-        <ResultBox v-if="gameStore.remainingTime === 0 || gameStore.answerSubmitted === true" class="mt-4" />
+        <ResultBox v-if="gameStore.remainingTime === 0 || gameStore.answerSubmitted === true" class="mt-4 h-20" />
         <Button
-          v-if="gameStore.remainingTime === 0 || gameStore.answerSubmitted === true"
+          v-if="gameStore.showNextQuestionButton"
           color="bg-custom-green"
           hover="bg-custom-green-hover"
           @click="handleButtonClick"
-          >Question suivante</Button
+          >{{ gameStore.currentQuestionNumber === 6 ? 'Voir le score' : 'Question suivante' }}</Button
         >
       </div>
     </div>
     <AnswerInput
       placeholder="Entrez votre réponse ici"
       v-if="gameStore.remainingTime > 0 && gameStore.answerSubmitted === false"
+      class="mt-4 h-24"
     />
   </div>
 </template>

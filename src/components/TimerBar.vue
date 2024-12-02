@@ -4,7 +4,7 @@ import { useGameStore } from '@/stores/game'
 
 const gameStore = useGameStore()
 
-const totalTime = 180
+const totalTime = 10
 
 const emit = defineEmits(['timerEnd'])
 

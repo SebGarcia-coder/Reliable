@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import axios from 'axios'
+import { QuestionType } from '@/enums/game'
 
 export const useGameStore = defineStore('game', () => {
-  const remainingTime = ref(180)
+  const remainingTime = ref(10)
   const clues = ref<{ text: string }[]>([])
   const pointsPerClue = ref([5, 3, 2, 1])
   const currentClueIndex = ref(0)
@@ -17,8 +18,9 @@ export const useGameStore = defineStore('game', () => {
     correctAnswer: '',
   })
   const usedQuestionIds = ref<number[]>([])
+  const showNextQuestionButton = ref(false)
 
-  const currentQuestionCommon = ref(0)
+  const currentQuestionNumber = ref(0)
 
   const currentPoints = computed(() => pointsPerClue.value[currentClueIndex.value])
 
@@ -27,7 +29,7 @@ export const useGameStore = defineStore('game', () => {
   }
 
   const resetGame = () => {
-    remainingTime.value = 180
+    remainingTime.value = 10
     score.value = 0
     currentClueIndex.value = 0
 
@@ -52,14 +54,15 @@ export const useGameStore = defineStore('game', () => {
   }
 
   const getRandomQuestion = async (type: string, ids: number[] | null) => {
-    remainingTime.value = 180
+    showNextQuestionButton.value = false
+    remainingTime.value = 10
     clues.value = []
     currentClueIndex.value = 0
     currentQuestionId.value = null
     userAnswer.value = ''
     answerValidation.value = { isValid: false, message: '', correctAnswer: '' }
     answerSubmitted.value = false
-    currentQuestionCommon.value ++
+    currentQuestionNumber.value ++
     try {
       const response = await axios.get('http://127.0.0.1:8000/api/questions/random', {
         params: {
@@ -102,24 +105,30 @@ export const useGameStore = defineStore('game', () => {
         questionId: currentQuestionId.value,
         currentPoints: currentPoints.value,
       })
-      const { isValid, validatorMessage, correctAnswer } = response.data as {
+      const { isValid, validatorMessage, correctAnswer, questionType } = response.data as {
         isValid: boolean
         validatorMessage: string
         correctAnswer: string
+        questionType: string
       }
 
       answerValidation.value.isValid = isValid
-      answerValidation.value.message = validatorMessage
       answerValidation.value.correctAnswer = correctAnswer
-
-      revealAllClues(currentQuestionId.value)
-      if (isValid) {
-        addPointsForCurrentClue()
+      if(questionType === QuestionType.COMMON){
+      answerValidation.value.message = validatorMessage + ' La bonne réponse était : ' + correctAnswer
+      }else{
+        answerValidation.value.message = validatorMessage + ' Explication : ' + correctAnswer
       }
+
       clues.value = []
+      showNextQuestionButton.value = true
     } catch (error) {
       console.error('Error validating answer:', error)
       alert('There was an error. Please try again.')
+    }
+    revealAllClues(currentQuestionId.value)
+    if (answerValidation.value.isValid) {
+      addPointsForCurrentClue()
     }
   }
 
@@ -134,8 +143,9 @@ export const useGameStore = defineStore('game', () => {
     currentQuestionId,
     answerSubmitted,
     userAnswer,
-    currentQuestionCommon,
+    currentQuestionNumber,
     usedQuestionIds,
+    showNextQuestionButton,
     revealNextClue,
     addPointsForCurrentClue,
     resetGame,
