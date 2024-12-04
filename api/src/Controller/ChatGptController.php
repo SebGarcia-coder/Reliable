@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\VarDumper\VarDumper;
+use Symfony\Component\Validator\Validation;
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\QuestionRepository;
 use App\Enum\QuestionType;
 use App\Service\ChatGptService;
@@ -18,7 +20,6 @@ class ChatGptController extends AbstractController
         private readonly HttpClientInterface $httpClient,
         private readonly ChatGptService $chatGptService,
         private readonly QuestionRepository $questionRepository,
-
     ) {
         $this->openAiApiKey = $_ENV['OPENAI_API_KEY'];
     }
@@ -45,6 +46,27 @@ class ChatGptController extends AbstractController
         $correctAnswerForSequence = strtolower($cluesArray[3]);
         $questionType = $this->questionRepository->find($questionId)->getType();
 
+        $validator = Validation::createValidator();
+
+        $violations = $validator->validate($userAnswer, [
+            new Assert\Length([
+                'max' => 100,
+                'maxMessage' => 'Answer cannot exceed 100 characters.',
+            ]),
+            new Assert\Regex([
+                'pattern' => '/^[a-zA-Z0-9\s]+$/',
+                'message' => 'Only alphanumeric characters and spaces are allowed.',
+            ]),
+        ]);
+
+        if (count($violations) > 0) {
+            $errors = [];
+            foreach ($violations as $violation) {
+                $errors[] = $violation->getMessage();
+            }
+            return new JsonResponse(['errors' => $errors], 400);
+        }
+
         $type = QuestionType::from($questionType);
 
         $clueString = implode(", ", $cluesArray);
@@ -56,13 +78,13 @@ class ChatGptController extends AbstractController
         if (!$response) {
             return new JsonResponse(['error' => 'Failed to validate answer'], 500);
         }
-        
+
         $validatorMessage = $response['choices'][0]['message']['content'];
         $isValid = true;
         if (str_ends_with(trim($validatorMessage), 'Désolé !')) {
             $isValid = false;
         }
-        
+
         return new JsonResponse(['isValid' => $isValid, 'validatorMessage' => $validatorMessage, 'correctAnswer' => $correctAnswer, 'questionType' => $questionType]);
     }
 }

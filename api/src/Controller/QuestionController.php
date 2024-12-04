@@ -73,24 +73,24 @@ class QuestionController extends AbstractController
         ]);
     }
 
-    #[Route('/api/questions/{id}/validate', name: 'validate_answer', methods: ['POST'])]
-    public function validateAnswer(int $id, Request $request, QuestionRepository $repository): JsonResponse
-    {
-        $data = json_decode($request->getContent(), true);
-        $userAnswer = $data['userAnswer'];
-        $cluesUsed = $data['cluesUsed'];
+    // #[Route('/api/questions/{id}/validate', name: 'validate_answer', methods: ['POST'])]
+    // public function validateAnswer(int $id, Request $request, QuestionRepository $repository): JsonResponse
+    // {
+    //     $data = json_decode($request->getContent(), true);
+    //     $userAnswer = $data['userAnswer'];
+    //     $cluesUsed = $data['cluesUsed'];
 
-        $question = $repository->find($id);
-        if (!$question) {
-            return new JsonResponse(['error' => 'Question not found'], 404);
-        }
+    //     $question = $repository->find($id);
+    //     if (!$question) {
+    //         return new JsonResponse(['error' => 'Question not found'], 404);
+    //     }
 
-        $isCorrect = strtolower(trim($userAnswer)) === strtolower(trim($question->getAnswer()));
+    //     $isCorrect = strtolower(trim($userAnswer)) === strtolower(trim($question->getAnswer()));
 
-        return new JsonResponse([
-            'isCorrect' => $isCorrect,
-            'message' => $isCorrect ? 'Correct!' : 'Incorrect. The answer is '.$question->getAnswer(),
-            'score' => $isCorrect ? max(1, 5 - $cluesUsed) : 0,
-        ]);
-    }
+    //     return new JsonResponse([
+    //         'isCorrect' => $isCorrect,
+    //         'message' => $isCorrect ? 'Correct!' : 'Incorrect. The answer is '.$question->getAnswer(),
+    //         'score' => $isCorrect ? max(1, 5 - $cluesUsed) : 0,
+    //     ]);
+    // }
 }
