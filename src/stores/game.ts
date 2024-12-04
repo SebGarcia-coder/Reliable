@@ -4,7 +4,7 @@ import axios from 'axios'
 import { QuestionType } from '@/enums/game'
 
 export const useGameStore = defineStore('game', () => {
-  const remainingTime = ref(10)
+  const remainingTime = ref(90)
   const clues = ref<{ text: string }[]>([])
   const pointsPerClue = ref([5, 3, 2, 1])
   const currentClueIndex = ref(0)
@@ -29,7 +29,7 @@ export const useGameStore = defineStore('game', () => {
   }
 
   const resetGame = () => {
-    remainingTime.value = 10
+    remainingTime.value = 90
     score.value = 0
     currentClueIndex.value = 0
 
@@ -55,7 +55,7 @@ export const useGameStore = defineStore('game', () => {
 
   const getRandomQuestion = async (type: string, ids: number[] | null) => {
     showNextQuestionButton.value = false
-    remainingTime.value = 10
+    remainingTime.value = 90
     clues.value = []
     currentClueIndex.value = 0
     currentQuestionId.value = null

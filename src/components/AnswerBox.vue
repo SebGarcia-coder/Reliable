@@ -11,7 +11,8 @@ defineProps({
 
 const updateValue = (event: Event) => {
   const input = event.target as HTMLInputElement;
-  emit('update:modelValue', input.value);
+  const sanitizedInput = input.value.replace(/[^a-zA-Z0-9 ]/g, '');
+  emit('update:modelValue', sanitizedInput);
 };
 </script>
 
