@@ -19,6 +19,8 @@ export const useGameStore = defineStore('game', () => {
   })
   const usedQuestionIds = ref<number[]>([])
   const showNextQuestionButton = ref(false)
+  const demoMode = ref(true)
+  const currentDemoStep = ref(0)
 
   const currentQuestionNumber = ref(0)
 
@@ -132,6 +134,15 @@ export const useGameStore = defineStore('game', () => {
     }
   }
 
+  const proceedToNextDemoStep = () => {
+    currentDemoStep.value++;
+  };
+
+  const exitDemoMode = () => {
+    demoMode.value = false;
+    currentDemoStep.value = 0;
+  };
+
   return {
     remainingTime,
     clues,
@@ -146,11 +157,15 @@ export const useGameStore = defineStore('game', () => {
     currentQuestionNumber,
     usedQuestionIds,
     showNextQuestionButton,
+    demoMode,
+    currentDemoStep,
     revealNextClue,
     addPointsForCurrentClue,
     resetGame,
     revealAllClues,
     getRandomQuestion,
     submitAnswer,
+    proceedToNextDemoStep,
+    exitDemoMode
   }
 })

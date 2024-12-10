@@ -7,54 +7,16 @@ import { useGameStore } from '@/stores/game';
 
 const gameStore = useGameStore();
 
-// const userAnswer = ref('');
-
-
-// TODO : quand les questions seront dans la bdd, n'envoyer que l'id de la question.
-
-// let clueString = ''
-
-// if (gameStore.clues) {
-//   for (const clue of gameStore.clues) {
-//     clueString += clue.text + ', ';
-//   }
-// }
-
-// const submitAnswer = async () => {
-//   gameStore.answerSubmitted = true
-//   try {
-//     const response = await axios.post('https://127.0.0.1:8000/api/validate-answer', {
-//       userAnswer: userAnswer.value,
-//       clues: clueString,
-//     });
-//     const { isValid, validatorMessage } = response.data as { isValid: boolean, validatorMessage: string };
-
-//     gameStore.answerValidation.isValid = isValid;
-//     gameStore.answerValidation.message = validatorMessage;
-
-//     gameStore.revealAllClues(gameStore.currentQuestionId);
-//     if(isValid) {
-
-//       gameStore.addPointsForCurrentClue();
-//     }
-
-
-//   } catch (error) {
-//     console.error('Error validating answer:', error);
-//     alert('There was an error. Please try again.');
-//   }
-// };
-
 </script>
 
 <template>
-  <form @submit.prevent="gameStore.submitAnswer" class="flex flex-col items-center justify-end">
-    <AnswerBox v-model="gameStore.userAnswer" placeholder="Entrez votre réponse ici" />
-    <Button
+  <form @submit.prevent="gameStore.submitAnswer" class="flex flex-col items-center">
+    <AnswerBox v-model="gameStore.userAnswer" placeholder="Entrez votre réponse ici"  />
+    <Button v-if="gameStore.remainingTime > 0 && !gameStore.answerSubmitted"
       color="bg-custom-green"
       hover="bg-custom-green-hover"
       type="submit"
-      class="mt-4"
+      class="mt-6"
     >
       Répondre
   </Button>

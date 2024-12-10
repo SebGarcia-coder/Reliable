@@ -12,8 +12,8 @@ const goToNextpage = () => {
 <template>
 
   <div class="flex flex-col items-center justify-center min-h-screen text-white">
-    <p class="text-center text-4xl w-3/5 my-9">Dans cette deuxième série, vous devez trouver le 4ème élément qui termine la séquence. </p>
-    <p class="text-center text-4xl w-3/5 mx-auto my-9">Si vous trouvez dès le premier élément, vous remportez 5 points, au deuxième seulement 3 points et au troisième 2 points.</p>
+    <p class="text-center md:text-4xl text-xl w-3/5 md:my-9 my-6">Dans cette deuxième série, vous devez trouver le 4ème élément qui termine la séquence. </p>
+    <p class="text-center md:text-4xl text-xl w-3/5 mx-auto md:my-9 my-6">Si vous trouvez dès le premier élément, vous remportez 5 points, au deuxième seulement 3 points et au troisième 2 points.</p>
     <Button color="bg-custom-green" hover="bg-custom-green-hover" @click="goToNextpage" class="my-9">Suivant</Button>
   </div>
 </template>

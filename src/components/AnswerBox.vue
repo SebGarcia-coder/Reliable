@@ -17,14 +17,15 @@ const updateValue = (event: Event) => {
 </script>
 
 <template>
-  <div class="w-96 h-12 rounded-lg bg-white flex items-center px-4">
+  <div class="md:w-96 w-80 md:h-24 h-16 rounded-lg bg-white flex items-center px-4">
     <input
       :value="modelValue"
       @input="updateValue"
       :placeholder="placeholder"
-      class="w-full h-full bg-transparent border-none outline-none text-black"
+      class="bg-transparent border-none outline-none text-black"
       type="text"
       maxlength="100"
+      autofocus
     />
   </div>
 </template>

@@ -11,7 +11,7 @@ const goToNextpage = () => {
 
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen text-white">
-    <p class="text-center text-4xl  my-9">Bienvenue dans Reliable <br/> un jeu où il faut savoir créer des liens</p>
+    <p class="text-center md:text-4xl text-xl  md:my-9 my-6">Bienvenue dans Reliable <br/> un jeu où il faut savoir créer des liens</p>
     <Button color="bg-custom-green" hover="bg-custom-green-hover" @click="goToNextpage">Suivant</Button>
   </div>
 </template>
