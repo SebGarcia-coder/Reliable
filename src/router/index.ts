@@ -1,25 +1,58 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import Demo from '../views/GameView.vue';
 
-import Home from '../views/Home.vue';
-import Rules1 from '../views/RulesOne.vue';
-import Rules2 from '../views/RulesTwo.vue';
-import Demo from '../views/DemoView.vue';
-import Rules3 from '@/views/RulesThree.vue';
-import Summary from '@/views/Summary.vue';
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'home', component: Home },
-    { path: '/rules-1', name: 'rules-1', component: Rules1 },
-    { path: '/rules-2', name: 'rules-2', component: Rules2 },
-    { path: '/rules-3', name: 'rules-3', component: Rules3 },
-    { path: '/summary', name: 'summary', component: Summary },
-
-
-
-    { path: '/demo', name: 'demo', component: Demo },
+    { path: '/', name: 'home', component: Demo },
   ],
 });
 
-export default router
+
+router.beforeEach((to, from, next) => {
+  interface PreventNavigation {
+    (message: string): void;
+  }
+
+  const preventNavigation: PreventNavigation = (message: string) => {
+    const confirmExit: boolean = confirm(message);
+    if (confirmExit) {
+      next();
+    } else {
+      next(false); // Cancel navigation
+    }
+  };
+
+
+  if (to.name === 'demo' && from.name === null) {
+    preventNavigation(
+      'Vous êtes sur le point de recommencer la partie. Votre score sera perdu. Voulez-vous continuer ?'
+    );
+  }
+
+
+  else if (
+    from.name === 'demo' &&
+    (to.name !== 'rules-3' && to.name !== 'summary')
+  ) {
+    preventNavigation(
+      'Vous êtes sur le point de quitter cette partie. Votre score sera perdu. Voulez-vous continuer ?'
+    );
+  }
+
+
+  // else if (to.name === 'rules-3' || from.name === 'rules-3') {
+  //   preventNavigation(
+  //     'Vous ne pouvez pas revenir en arrière ou avancer à partir des règles. Voulez-vous continuer ?'
+  //   );
+  // }
+
+  // Default behavior: Allow navigation
+  else {
+    next();
+  }
+});
+
+export default router;

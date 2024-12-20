@@ -54,8 +54,8 @@ class ChatGptController extends AbstractController
                 'maxMessage' => 'Answer cannot exceed 100 characters.',
             ]),
             new Assert\Regex([
-                'pattern' => '/^[a-zA-Z0-9\s]+$/',
-                'message' => 'Only alphanumeric characters and spaces are allowed.',
+                'pattern' => '/^[\p{L}\p{N}\s]+$/u',
+                'message' => 'Only alphanumeric characters, accented letters, and spaces are allowed.',
             ]),
         ]);
 

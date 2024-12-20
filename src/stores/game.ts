@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import axios from 'axios'
 import { QuestionType } from '@/enums/game'
 
+
 export const useGameStore = defineStore('game', () => {
   const remainingTime = ref(90)
   const clues = ref<{ text: string }[]>([])
@@ -21,8 +22,8 @@ export const useGameStore = defineStore('game', () => {
   const showNextQuestionButton = ref(false)
   const demoMode = ref(true)
   const currentDemoStep = ref(0)
-
   const currentQuestionNumber = ref(0)
+  const currentGameStep = ref(0)
 
   const currentPoints = computed(() => pointsPerClue.value[currentClueIndex.value])
 
@@ -34,6 +35,8 @@ export const useGameStore = defineStore('game', () => {
     remainingTime.value = 90
     score.value = 0
     currentClueIndex.value = 0
+    currentGameStep.value = 2
+    getRandomQuestion(QuestionType.COMMON, null)
 
   }
 
@@ -143,6 +146,13 @@ export const useGameStore = defineStore('game', () => {
     currentDemoStep.value = 0;
   };
 
+  const moveToStep = (number:number) => {
+    currentGameStep.value = number;
+    if(currentQuestionNumber.value === 3){
+      getRandomQuestion(QuestionType.SEQUENCE, usedQuestionIds.value)
+    }
+  }
+
   return {
     remainingTime,
     clues,
@@ -159,6 +169,7 @@ export const useGameStore = defineStore('game', () => {
     showNextQuestionButton,
     demoMode,
     currentDemoStep,
+    currentGameStep,
     revealNextClue,
     addPointsForCurrentClue,
     resetGame,
@@ -166,6 +177,7 @@ export const useGameStore = defineStore('game', () => {
     getRandomQuestion,
     submitAnswer,
     proceedToNextDemoStep,
-    exitDemoMode
+    exitDemoMode,
+    moveToStep
   }
 })
